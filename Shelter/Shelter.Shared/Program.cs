@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Shelter.Shared
@@ -12,24 +13,19 @@ namespace Shelter.Shared
                 Name = "Our shelter"
             };
 
-            shelter.Cats = new List<Cat>();
-            shelter.Cats = new Cat() { Declawed = 0, Race = "naaktkat"});
-
-            shelter.Cats.ToList().ForEach(x =>
-            {
-                Console.WriteLine($"{x.Declawed} - {x.Race}");
-            });
+                Console.WriteLine($"TEST");
         }
     }
 
     public class Shelter
     {
         public string Name { get; set; }
+        
     }
 
     public class Person
     {
-        public string FullName => $"{Lastname}, ${FirstName}";
+        public string FullName => $"{LastName}, ${FirstName}";
         public string LastName { get; set; }
         public string FirstName { get; set; }
     }
@@ -39,7 +35,7 @@ namespace Shelter.Shared
 
     }
 
-    public class CareTaker
+    public class CareTaker : Person
     {
         public Animal TakesCareOf { get; set; }
     }
