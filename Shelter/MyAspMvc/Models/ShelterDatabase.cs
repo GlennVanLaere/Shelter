@@ -17,6 +17,7 @@ namespace Shelter.MyAspMvc.Models
                 {
                     Name = "Our shelter"
                 };
+
                 shelter.Animals = new List<Animal>
                 {
                    new Cat{ Name = "Poes",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx"},
@@ -31,7 +32,14 @@ namespace Shelter.MyAspMvc.Models
             }
 
         }
-
+        public static Shared.Shelter shelter
+        {
+            get
+            {
+                Initialize();
+                return _shelter;
+            }
+        }
 
     }
 }
