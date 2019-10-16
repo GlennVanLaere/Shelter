@@ -20,7 +20,8 @@ namespace MyAspMvc.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            
+            return View(new Shelter.Shared.Shelter());
         }
 
         public IActionResult Privacy()

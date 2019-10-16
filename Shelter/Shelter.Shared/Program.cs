@@ -13,14 +13,14 @@ namespace Shelter.Shared
                 Name = "Our shelter"
             };
 
-            Console.WriteLine($"TEST");
+            
 
             shelter.Animals = new List<Animal>();
             shelter.Animals.Add(new Cat() { Name = "Poes", DateOfBirth = new DateTime(2000,02,14), IsChecked = true, KidFriendly = false, Since = DateTime.Now, Declawed = true, Race = "Hairless Sphynx"});
 
             shelter.Cats.ToList().ForEach(x =>
             {
-                Console.WriteLine($"{x.Name} - {x.DateOfBirth} - {x.Declawed}");
+                
             });
     
         }
@@ -63,17 +63,18 @@ namespace Shelter.Shared
         public bool IsChecked { get; set; }
         public bool KidFriendly { get; set; }
         public DateTime Since { get; set; }
+        public string Race { get; set; }
     }
 
     public class Cat : Animal
     {
         public bool Declawed { get; set; }
-        public string Race { get; set; }
+        
     }
 
     public class Dog : Animal
     {
         public bool Barker { get; set; }
-        public string Race { get; set; }
+        
     }
 }
