@@ -1,8 +1,20 @@
-﻿@using Shelter.Shared
+﻿@model Shelter.Shared.Shelter
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
-
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type Name</th>
+  </tr>
+  @foreach (var item in Model.Animals)
+  {
+    <tr>
+      <td>@item.Name</td>
+      
+    </tr>
+  }
+</table>
 

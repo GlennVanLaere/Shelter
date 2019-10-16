@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using MyAspMvc.Models;
+using Shelter.MyAspMvc.Models;
 
 namespace MyAspMvc.Controllers
 {
@@ -21,7 +21,7 @@ namespace MyAspMvc.Controllers
         public IActionResult Index()
         {
             
-            return View(new Shelter.Shared.Shelter());
+            return View(ShelterDatabase.Shelter);
         }
 
         public IActionResult Privacy()

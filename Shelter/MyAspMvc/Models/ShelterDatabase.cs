@@ -32,7 +32,7 @@ namespace Shelter.MyAspMvc.Models
             }
 
         }
-        public static Shared.Shelter shelter
+        public static Shared.Shelter Shelter
         {
             get
             {
