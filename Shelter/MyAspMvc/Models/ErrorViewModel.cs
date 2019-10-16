@@ -1,6 +1,6 @@
 using System;
 
-namespace Shelter.MyAspMvc.Models
+namespace MyAspMvc.Models
 {
     public class ErrorViewModel
     {

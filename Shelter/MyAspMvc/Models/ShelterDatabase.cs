@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Shelter.Shared;
 using System;
 
-namespace Shelter.MyAspMvc.Models
+namespace MyAspMvc.Models
 {
     public class ShelterDatabase
     {
@@ -32,7 +32,7 @@ namespace Shelter.MyAspMvc.Models
             }
 
         }
-        public static Shared.Shelter Shelter
+        public static Shelter.Shared.Shelter Shelter
         {
             get
             {
