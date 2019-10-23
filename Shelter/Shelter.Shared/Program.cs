@@ -13,16 +13,16 @@ namespace Shelter.Shared
                 Name = "Our shelter"
             };
 
-            
+
 
             shelter.Animals = new List<Animal>();
-            shelter.Animals.Add(new Cat() { Name = "Poes", DateOfBirth = new DateTime(2000,02,14), IsChecked = true, KidFriendly = false, Since = DateTime.Now, Declawed = true, Race = "Hairless Sphynx"});
+            shelter.Animals.Add(new Cat() { Name = "Poes", DateOfBirth = new DateTime(2000, 02, 14), IsChecked = true, KidFriendly = false, Since = DateTime.Now, Declawed = true, Race = "Hairless Sphynx" });
 
             shelter.Cats.ToList().ForEach(x =>
             {
-                
+
             });
-    
+
         }
     }
 
@@ -58,6 +58,7 @@ namespace Shelter.Shared
 
     public class Animal
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public bool IsChecked { get; set; }
@@ -69,12 +70,12 @@ namespace Shelter.Shared
     public class Cat : Animal
     {
         public bool Declawed { get; set; }
-        
+
     }
 
     public class Dog : Animal
     {
         public bool Barker { get; set; }
-        
+
     }
 }

@@ -1,0 +1,11 @@
+@model Shelter.Shared.Animal
+
+<p>
+Are you sure you want to edit <em>@Model.Name</em> ?
+</p>
+
+<form asp-controller="Animal" asp-action="DoEdit">
+  <input asp-for="Id" type="hidden"/>
+  <input asp-for = "Name"/>   
+  <button type="submit">Edit</button>
+</form>

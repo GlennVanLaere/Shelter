@@ -1,0 +1,10 @@
+@model Shelter.Shared.Animal
+
+<p>
+Are you sure you want to delete <em>@Model.Name</em> ?
+</p>
+
+<form asp-controller="Animal" asp-action="DoDelete">
+  <input asp-for="Id" type="hidden">
+  <button type="submit">Delete</button>
+</form>

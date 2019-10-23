@@ -1,0 +1,33 @@
+@model Shelter.Shared.Animal
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table>
+  <tr>
+    <th>Name</th>
+    <td style="font-weight: bold">@Model.Name</td>
+  </tr>
+  <tr>
+    <th>Date of birth</th>
+    <td>@Model.DateOfBirth</td>
+  </tr>
+  <tr>
+    <th>Is the animal checked?</th>
+    <td>@Model.IsChecked</td>
+  </tr>
+  <tr>
+    <th>Is the animal kid friendly?</th>
+    <td>@Model.KidFriendly</td>
+  </tr>
+    <tr>
+    <th>In Shelter since</th>
+    <td>@Model.Since</td>
+  </tr>
+    <tr>
+    <th>Race</th>
+    <td>@Model.Race</td>
+  </tr>
+</table>
+
