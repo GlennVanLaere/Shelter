@@ -28,6 +28,7 @@ namespace Shelter.Shared
 
     public class Shelter
     {
+        public int ShelterId {get; set;}
         public string Name { get; set; }
         public ICollection<Animal> Animals { get; set; }
 
@@ -76,6 +77,13 @@ namespace Shelter.Shared
     public class Dog : Animal
     {
         public bool Barker { get; set; }
+
+    }
+
+    public class Other : Animal
+    {
+        public string Description { get; set; }
+        public bool Kind { get; set; }
 
     }
 }

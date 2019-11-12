@@ -15,6 +15,7 @@ namespace MyAspMvc.Models
             {
                 var shelter = new Shelter.Shared.Shelter()
                 {
+                    ShelterId = 1,
                     Name = "Our shelter"
                 };
 
@@ -26,6 +27,8 @@ namespace MyAspMvc.Models
                    new Dog{ Id = 4,Name = "Felix",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Golden Retriever"},
                    new Dog{ Id = 5,Name = "peppa",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Danish Dog"},
                 };
+
+       
                 _shelter = shelter;
                 _isInitialized = true;
             }
