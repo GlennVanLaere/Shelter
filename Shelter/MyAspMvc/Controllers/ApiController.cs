@@ -22,6 +22,10 @@ namespace MyAspMvc.Controllers
         {
             return new ObjectResult(ShelterDatabase.Shelter);
         }
+        public IActionResult Shelter(int ShelterId)
+        {
+            return new ObjectResult(ShelterDatabase.Shelter.Animals);
+        }
 
         public IActionResult Privacy()
         {
