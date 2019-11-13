@@ -31,7 +31,7 @@ namespace MyAspMvc
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDatabaseInitializer databaseInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -57,7 +57,7 @@ namespace MyAspMvc
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
             
-            DatabaseInitializer.Initialize();
+            databaseInitializer.Initialize();
         }
     }
 }
