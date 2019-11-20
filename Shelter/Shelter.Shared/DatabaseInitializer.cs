@@ -40,7 +40,7 @@ namespace Shelter.Shared
       var shelter = new Shelter()
       {
         Name = "our shelter",
-        ShelterId = 1,
+        Id = 1,
         Animals = new List<Animal> {
           new Dog { Name = "Tommy"},
           new Cat { Name = "pluisje "},

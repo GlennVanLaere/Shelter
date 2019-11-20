@@ -15,7 +15,7 @@ namespace MyAspMvc.Models
             {
                 var shelter = new Shelter.Shared.Shelter()
                 {
-                    ShelterId = 1,
+                    Id = 1,
                     Name = "Our shelter"
                 };
 

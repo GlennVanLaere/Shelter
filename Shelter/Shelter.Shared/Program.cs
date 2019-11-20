@@ -4,7 +4,11 @@ using System.Linq;
 
 namespace Shelter.Shared
 {
-    class Program
+    public class IdClass
+    {
+        public int Id {get; set;}
+    }
+    class Program : IdClass
     {
         static void Main(string[] args)
         {
@@ -26,16 +30,15 @@ namespace Shelter.Shared
         }
     }
 
-    public class Shelter
+    public class Shelter : IdClass
     {
-        public int ShelterId {get; set;}
         public string Name { get; set; }
         public ICollection<Animal> Animals { get; set; }
 
         public ICollection<Cat> Cats => Animals.OfType<Cat>().ToList();
     }
 
-    public class Person
+    public class Person : IdClass
     {
         public string FullName => $"{LastName}, ${FirstName}";
         public string LastName { get; set; }
@@ -57,9 +60,8 @@ namespace Shelter.Shared
 
     }
 
-    public class Animal
+    public class Animal : IdClass
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
         public bool IsChecked { get; set; }
