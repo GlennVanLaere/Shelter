@@ -22,10 +22,7 @@ namespace Shelter.Shared
             shelter.Animals = new List<Animal>();
             shelter.Animals.Add(new Cat() { Name = "Poes", DateOfBirth = new DateTime(2000, 02, 14), IsChecked = true, KidFriendly = false, Since = DateTime.Now, Declawed = true, Race = "Hairless Sphynx" });
 
-            shelter.Cats.ToList().ForEach(x =>
-            {
-
-            });
+         
 
         }
     }
@@ -35,7 +32,7 @@ namespace Shelter.Shared
         public string Name { get; set; }
         public ICollection<Animal> Animals { get; set; }
 
-        public ICollection<Cat> Cats => Animals.OfType<Cat>().ToList();
+        // public ICollection<Cat> Cats => Animals.OfType<Cat>().ToList();
     }
 
     public class Person : IdClass

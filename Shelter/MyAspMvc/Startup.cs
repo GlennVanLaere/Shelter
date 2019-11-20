@@ -29,6 +29,7 @@ namespace MyAspMvc
             services.AddControllersWithViews();
             services.AddDbContext<ShelterContext>(options => options.UseSqlite(Configuration.GetConnectionString("ShelterContext")));
             services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
+            services.AddScoped<IShelterDataAccess, ShelterDataAccess>();
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
