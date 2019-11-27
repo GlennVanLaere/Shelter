@@ -37,8 +37,6 @@ namespace MyAspMvc.Controllers
             return Ok(_dataAccess.GetAllSheltersFull());
         }
 
-
-
         [HttpGet("{id}")]
         public IActionResult GetShelter(int id)
         {
@@ -63,19 +61,6 @@ namespace MyAspMvc.Controllers
             var animal = _dataAccess.GetAnimalByShelterAndId(shelterId, animalId);
             return animal == default(Shelter.Shared.Animal) ? (IActionResult)NotFound() : Ok(animal);
         }
-
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-
     }
 }
 

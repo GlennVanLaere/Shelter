@@ -31,8 +31,6 @@ namespace Shelter.Shared
     {
         public string Name { get; set; }
         public ICollection<Animal> Animals { get; set; }
-
-        // public ICollection<Cat> Cats => Animals.OfType<Cat>().ToList();
     }
 
     public class Person : IdClass
@@ -65,6 +63,7 @@ namespace Shelter.Shared
         public bool KidFriendly { get; set; }
         public DateTime Since { get; set; }
         public string Race { get; set; }
+        public int ShelterId { get; set; }
     }
 
     public class Cat : Animal

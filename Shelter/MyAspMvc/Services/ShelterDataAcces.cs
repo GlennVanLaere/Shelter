@@ -52,7 +52,7 @@ namespace MyAspMvc
     public Animal GetAnimalByShelterAndId(int shelterId, int animalId)
     {
         return _context.Animals
-        .FirstOrDefault(x => x.Id == shelterId && x.Id == animalId);
+        .FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
     }
   }
 }
