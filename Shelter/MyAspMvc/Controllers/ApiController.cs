@@ -18,18 +18,18 @@ namespace MyAspMvc.Controllers
             _logger = logger;
         }
 
-//all information from database
+        //all information from database
         public IActionResult Index()
         {
             return new ObjectResult(ShelterDatabase.Shelter);
         }
-//the different shelters
+        //the different shelters
 
         public IActionResult shelters(int ShelterId)
         {
-            var info = "ID: "+ShelterDatabase.Shelter.ShelterId + " Name: " + ShelterDatabase.Shelter.Name;
+            var info = "ID: " + ShelterDatabase.Shelter.ShelterId + " Name: " + ShelterDatabase.Shelter.Name;
             return new ObjectResult(info);
-            
+
         }
 
         public IActionResult Privacy()
