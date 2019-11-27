@@ -61,6 +61,26 @@ namespace MyAspMvc.Controllers
             var animal = _dataAccess.GetAnimalByShelterAndId(shelterId, animalId);
             return animal == default(Shelter.Shared.Animal) ? (IActionResult)NotFound() : Ok(animal);
         }
+
+        [HttpDelete("{shelterId}/animals/{animalId}")]
+        public IActionResult Delete()
+        {
+            return NoContent();
+        }
+        //geef alle cats uit shelter met id:1 weer
+        // [HttpGet("{shelterId}/cats")]
+        // public IActionResult GetShelterCats(int id)
+        // {
+        //     var cats = _dataAccess.GetCats(id);
+        //     return cats == default(IEnumerable<Animal>) ? (IActionResult)NotFound() : Ok(cats);
+        // }
+
+        //post is create new animal met type Cat
+        //[HttpPost("{shelterId}/cats")]
+        // public ActionResult CreateAnimal(int shelterId, [FromBody]Animal _animal)
+        // {
+        //     return Created("", _animal);
+        // }
     }
 }
 

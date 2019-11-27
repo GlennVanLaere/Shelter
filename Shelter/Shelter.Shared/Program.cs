@@ -6,7 +6,7 @@ namespace Shelter.Shared
 {
     public class IdClass
     {
-        public int Id {get; set;}
+        public int Id { get; set; }
     }
     class Program : IdClass
     {
@@ -16,14 +16,8 @@ namespace Shelter.Shared
             {
                 Name = "Our shelter"
             };
-
-
-
             shelter.Animals = new List<Animal>();
             shelter.Animals.Add(new Cat() { Name = "Poes", DateOfBirth = new DateTime(2000, 02, 14), IsChecked = true, KidFriendly = false, Since = DateTime.Now, Declawed = true, Race = "Hairless Sphynx" });
-
-         
-
         }
     }
 
