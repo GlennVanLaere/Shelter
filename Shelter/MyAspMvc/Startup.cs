@@ -24,6 +24,18 @@ namespace MyAspMvc
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+<<<<<<< Updated upstream
+=======
+            services.AddDbContext<ShelterContext>(options => options.UseSqlite(Configuration.GetConnectionString("ShelterContext")));
+            services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
+            services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
+            services.AddScoped<IShelterDataAccess, ShelterDataAccess>();
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API Shelter", Version = "v1" });
+            });
+>>>>>>> Stashed changes
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +51,11 @@ namespace MyAspMvc
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+<<<<<<< Updated upstream
+=======
+
+
+>>>>>>> Stashed changes
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

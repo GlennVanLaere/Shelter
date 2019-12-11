@@ -28,7 +28,7 @@ namespace MyAspMvc.Models
                    new Dog{ Id = 5,Name = "peppa",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Danish Dog"},
                 };
 
-       
+
                 _shelter = shelter;
                 _isInitialized = true;
             }
