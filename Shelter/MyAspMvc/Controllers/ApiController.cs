@@ -68,19 +68,33 @@ namespace MyAspMvc.Controllers
             return NoContent();
         }
         //geef alle cats uit shelter met id:1 weer
-        // [HttpGet("{shelterId}/cats")]
-        // public IActionResult GetShelterCats(int id)
-        // {
-        //     var cats = _dataAccess.GetCats(id);
-        //     return cats == default(IEnumerable<Animal>) ? (IActionResult)NotFound() : Ok(cats);
-        // }
+        [HttpGet("{shelterId}/cats")]
+        public IActionResult GetShelterCats(int id)
+        {
+            var cats = _dataAccess.GetCats(id); ;
+            return cats == default(Shelter.Shared.Shelter) ? (IActionResult)NotFound() : Ok(cats);
+        }
 
-        //post is create new animal met type Cat
-        //[HttpPost("{shelterId}/cats")]
-        // public ActionResult CreateAnimal(int shelterId, [FromBody]Animal _animal)
-        // {
-        //     return Created("", _animal);
-        // }
+        // post is create new animal met type Cat
+        [HttpPost("{shelterId}/cat")]
+        public ActionResult CreateCat(int shelterId, [FromBody]Animal _animal)
+        {
+            return Created("", _animal);
+        }
+
+        // post is create new animal met type Dog
+        [HttpPost("{shelterId}/dog")]
+        public ActionResult CreateDog(int shelterId, [FromBody]Animal _animal)
+        {
+            return Created("", _animal);
+        }
+
+        // post is create new animal met type Other
+        [HttpPost("{shelterId}/other")]
+        public ActionResult CreateOther(int shelterId, [FromBody]Animal _animal)
+        {
+            return Created("", _animal);
+        }
     }
 }
 

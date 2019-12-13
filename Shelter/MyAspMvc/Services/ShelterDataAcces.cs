@@ -12,7 +12,7 @@ namespace MyAspMvc
         Shelter.Shared.Shelter GetShelterById(int id);
 
         IEnumerable<Animal> GetAnimals(int shelterId);
-        // IEnumerable<Animal> GetCats(int shelterId);
+        IEnumerable<Cat> GetCats(int shelterId);
         Animal GetAnimalByShelterAndId(int shelterId, int animalId);
     }
 
@@ -45,12 +45,10 @@ namespace MyAspMvc
               .FirstOrDefault(x => x.Id == shelterId)?.Animals;
         }
         //Deze methode moet enkel cats teruggeven uit <animals>
-        // public IEnumerable<Animal> GetCats(int shelterId)
-        // {
-        //     return _context.Shelter
-        //       .Include(shelter => shelter.Animals)
-        //       .FirstOrDefault(x => x.Id == shelterId)?.Animals;
-        // }
+        public IEnumerable<Cat> GetCats(int shelterId)
+        {
+            return _context.Animals.ToList().OfType<Cat>();
+        }
 
         public Shelter.Shared.Shelter GetShelterById(int id)
         {
