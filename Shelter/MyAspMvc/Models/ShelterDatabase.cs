@@ -18,6 +18,9 @@ namespace MyAspMvc.Models
 
         public void Initialize()
         {
+            if(!_context.Database.EnsureCreated()) {
+                return;
+            }
             var shelter = new Shelter.Shared.Shelter()
             {
                 Id = 1,
