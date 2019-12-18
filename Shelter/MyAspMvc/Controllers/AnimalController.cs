@@ -55,7 +55,7 @@ namespace MyAspMvc.Controllers
         }
         public IActionResult DoEdit(int id, string name)
         {
-            var targetAnimal = ShelterDatabase.Shelter.Animals.FirstOrDefault(x => x.Id == id);
+            var targetAnimal = ShelterDatabase.ShelterContext.Animals.FirstOrDefault(x => x.Id == id);
             if (targetAnimal == default(Shelter.Shared.Animal))
             {
                 return NotFound();

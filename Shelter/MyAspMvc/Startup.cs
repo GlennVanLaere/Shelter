@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Shelter.Shared;
 using Microsoft.OpenApi.Models;
+using MyAspMvc.Models;
 
 namespace MyAspMvc
 {
@@ -28,7 +29,7 @@ namespace MyAspMvc
         {
             services.AddControllersWithViews();
             services.AddDbContext<ShelterContext>(options => options.UseSqlite(Configuration.GetConnectionString("ShelterContext")));
-            services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
+            services.AddScoped<IShelterDatabase, ShelterDatabase>();
             services.AddScoped<IShelterDataAccess, ShelterDataAccess>();
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -38,7 +39,7 @@ namespace MyAspMvc
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDatabaseInitializer databaseInitializer)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ShelterDatabase databaseInitializer)
         {
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
@@ -62,7 +63,7 @@ namespace MyAspMvc
                 app.UseHsts();
             }
 
-        
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
