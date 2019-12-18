@@ -13,6 +13,9 @@ namespace MyAspMvc
 
         IEnumerable<Animal> GetAnimals(int shelterId);
         IEnumerable<Cat> GetCats(int shelterId);
+        IEnumerable<Dog> GetDogs(int shelterId);
+        IEnumerable<Other> GetOthers(int shelterId);
+
         Animal GetAnimalByShelterAndId(int shelterId, int animalId);
     }
 
@@ -47,8 +50,19 @@ namespace MyAspMvc
         //Deze methode moet enkel cats teruggeven uit <animals>
         public IEnumerable<Cat> GetCats(int shelterId)
         {
-            return _context.Animals.ToList().OfType<Cat>();
+            return _context.Cats.ToList();
         }
+
+        public IEnumerable<Dog> GetDogs(int shelterId)
+        {
+            return _context.Dogs.ToList().OfType<Dog>();
+        }
+
+        public IEnumerable<Other> GetOthers(int shelterId)
+        {
+            return _context.Others.ToList().OfType<Other>();
+        }
+
 
         public Shelter.Shared.Shelter GetShelterById(int id)
         {

@@ -75,6 +75,21 @@ namespace MyAspMvc.Controllers
             return cats == default(Shelter.Shared.Shelter) ? (IActionResult)NotFound() : Ok(cats);
         }
 
+        //geef alle dogs uit shelter met id:1 weer
+        [HttpGet("{shelterId}/dogs")]
+        public IActionResult GetShelterDogs(int id)
+        {
+            var dogs = _dataAccess.GetDogs(id); ;
+            return dogs == default(Shelter.Shared.Shelter) ? (IActionResult)NotFound() : Ok(dogs);
+        }
+
+        [HttpGet("{shelterId}/others")]
+        public IActionResult GetShelterOthers(int id)
+        {
+            var others = _dataAccess.GetOthers(id);
+            return others == default(Shelter.Shared.Shelter) ? (IActionResult)NotFound() : Ok(others);
+        }
+
         // post is create new animal met type Cat
         [HttpPost("{shelterId}/cat")]
         public ActionResult CreateCat(int shelterId, [FromBody]Animal _animal)

@@ -12,5 +12,9 @@ namespace Shelter.Shared
         public DbSet<Animal> Animals { get; set; }
         public DbSet<Shelter> Shelter { get; set; }
         public DbSet<Person> Person { get; set; }
+        public DbSet<Cat> Cats { get; set; }
+        public DbSet<Dog> Dogs { get; set; }
+        public DbSet<Other> Others { get; set; }
+
     }
 }
