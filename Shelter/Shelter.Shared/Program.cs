@@ -7,6 +7,9 @@ namespace Shelter.Shared
     public class IdClass
     {
         public int Id { get; set; }
+        public string Street {get; set;}
+        public int PostalCode {get; set;}
+        public int Number {get; set;}
     }
     class Program : IdClass
     {

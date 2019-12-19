@@ -27,15 +27,15 @@ namespace MyAspMvc.Models
                 Id = 1,
                 Name = "Our shelter"
             };
-
+            
             shelter.Animals = new List<Animal>
                 {
-                   new Cat{ Id = 1,Name = "Poes",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx"},
-                   new Cat{ Id = 2,Name = "Kity",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx"},
-                   new Cat{ Id = 3,Name = "Wietel",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx"},
-                   new Dog{ Id = 4,Name = "Felix",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Golden Retriever"},
-                   new Dog{ Id = 5,Name = "Peppa",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Danish Dog"},
-                   new Other{ Id = 6,Name = "Weirdo",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now ,Race = "other"},
+                   new Cat{ Id = 1,Name = "Poes",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx",Street = "Stationsstraat", PostalCode=9100, Number=5},
+                   new Cat{ Id = 2,Name = "Kity",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx",Street = "Stationsstraat", PostalCode=9100, Number=6},
+                   new Cat{ Id = 3,Name = "Wietel",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = false,Since = DateTime.Now,Declawed = true,Race = "Hairless Sphynx",Street = "Stationsstraat", PostalCode=9100, Number=7},
+                   new Dog{ Id = 4,Name = "Felix",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Golden Retriever",Street = "Stationsstraat", PostalCode=9100, Number=8},
+                   new Dog{ Id = 5,Name = "Peppa",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now,Barker = true,Race = "Danish Dog",Street = "Stationsstraat", PostalCode=9100, Number=9},
+                   new Other{ Id = 6,Name = "Weirdo",DateOfBirth = new DateTime(2000, 02, 14),IsChecked = true,KidFriendly = true,Since = DateTime.Now ,Race = "other",Street = "Stationsstraat", PostalCode=9100, Number=10},
                 };
             _context.Add(shelter);
             _context.SaveChanges();
