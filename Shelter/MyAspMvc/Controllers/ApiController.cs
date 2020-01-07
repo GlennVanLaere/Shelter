@@ -110,6 +110,13 @@ namespace MyAspMvc.Controllers
         {
             return Created("", _animal);
         }
+
+        [HttpPut("{shelterId}/animals/{animalId}")]
+        public IActionResult UpdateAnimal(int shelterId, int animalId, [FromBody]Animal animal)
+        {
+            _dataAccess.UpdateAnimal(shelterId, animalId, animal);
+            return Ok();
+        }
     }
 }
 

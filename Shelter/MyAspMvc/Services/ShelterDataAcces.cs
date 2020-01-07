@@ -17,6 +17,7 @@ namespace MyAspMvc
         IEnumerable<Other> GetOthers(int shelterId);
 
         Animal GetAnimalByShelterAndId(int shelterId, int animalId);
+        void UpdateAnimal(int shelterId, int AnimalId, Animal animal);
     }
 
     public class ShelterDataAccess : IShelterDataAccess
@@ -73,6 +74,21 @@ namespace MyAspMvc
         {
             return _context.Animals
             .FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
+        }
+        public void UpdateAnimal(int shelterId, int animalId, Animal animal)
+        {
+            var existingAnimal = _context.Animals
+                .FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
+            existingAnimal.Name = animal.Name;
+            existingAnimal.DateOfBirth = animal.DateOfBirth;
+            existingAnimal.IsChecked = animal.IsChecked;
+            existingAnimal.KidFriendly = animal.KidFriendly;
+            existingAnimal.Since = animal.Since;
+            existingAnimal.Race = animal.Race;
+            existingAnimal.ShelterId = animal.ShelterId;
+
+            _context.Update(existingAnimal);
+            _context.SaveChanges();
         }
     }
 }
