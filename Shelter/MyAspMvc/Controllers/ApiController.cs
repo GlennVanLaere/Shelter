@@ -111,12 +111,29 @@ namespace MyAspMvc.Controllers
             return Created("", _animal);
         }
 
-        [HttpPut("{shelterId}/animals/{animalId}")]
-        public IActionResult UpdateAnimal(int shelterId, int animalId, [FromBody]Animal animal)
+        //edit Dog (Barker) animalId moet wel de Id van een "dog' zijn anders krijg je een 500 hihi
+        [HttpPut("{shelterId}/dog/{animalId}")]
+        public IActionResult UpdateDog(int shelterId, int animalId, [FromBody]Dog dog)
         {
-            _dataAccess.UpdateAnimal(shelterId, animalId, animal);
+            _dataAccess.UpdateDog(shelterId, animalId, dog);
             return Ok();
         }
+        //edit Cat (devlawed) animalId moet wel de Id van een "cat' zijn anders krijg je een 500 hihi
+        [HttpPut("{shelterId}/cat/{animalId}")]
+        public IActionResult UpdateCat(int shelterId, int animalId, [FromBody]Cat cat)
+        {
+            _dataAccess.UpdateCat(shelterId, animalId, cat);
+            return Ok();
+        }
+        //edit Other(Kind, description) animalId moet wel de Id van een "other' zijn anders krijg je een 500 hihi
+        [HttpPut("{shelterId}/other/{animalId}")]
+        public IActionResult UpdateOther(int shelterId, int animalId, [FromBody]Other other)
+        {
+            _dataAccess.UpdateOther(shelterId, animalId, other);
+            return Ok();
+        }
+        //individuele edits zijn nodig anders kan je de klasse specifieke zaken niet aanpassen zoals; declawed, barker etc... Anders was 1 animal update genoeg. (denkik)
+        //altijd shelterId meegeven in de body als je iets wilt aanpassen (anders krijgt hij volgens mij standaard nul en shelter met id 0 bestaat niet en krijg je een 500) (denkik)
     }
 }
 

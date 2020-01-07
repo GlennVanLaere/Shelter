@@ -17,7 +17,10 @@ namespace MyAspMvc
         IEnumerable<Other> GetOthers(int shelterId);
 
         Animal GetAnimalByShelterAndId(int shelterId, int animalId);
-        void UpdateAnimal(int shelterId, int AnimalId, Animal animal);
+        void UpdateDog(int shelterId, int AnimalId, Dog dog);
+        void UpdateCat(int shelterId, int AnimalId, Cat cat);
+        void UpdateOther(int shelterId, int AnimalId, Other other);
+
     }
 
     public class ShelterDataAccess : IShelterDataAccess
@@ -75,19 +78,63 @@ namespace MyAspMvc
             return _context.Animals
             .FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
         }
-        public void UpdateAnimal(int shelterId, int animalId, Animal animal)
+        public void UpdateDog(int shelterId, int animalId, Dog dog)
         {
-            var existingAnimal = _context.Animals
-                .FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
-            existingAnimal.Name = animal.Name;
-            existingAnimal.DateOfBirth = animal.DateOfBirth;
-            existingAnimal.IsChecked = animal.IsChecked;
-            existingAnimal.KidFriendly = animal.KidFriendly;
-            existingAnimal.Since = animal.Since;
-            existingAnimal.Race = animal.Race;
-            existingAnimal.ShelterId = animal.ShelterId;
+            var currentDog = _context.Dogs.FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
+            currentDog.Barker = dog.Barker;
 
-            _context.Update(existingAnimal);
+            currentDog.Name = dog.Name;
+            currentDog.DateOfBirth = dog.DateOfBirth;
+            currentDog.IsChecked = dog.IsChecked;
+            currentDog.KidFriendly = dog.KidFriendly;
+            currentDog.Since = dog.Since;
+            currentDog.Race = dog.Race;
+            currentDog.ShelterId = dog.ShelterId;
+            currentDog.Street = dog.Street;
+            currentDog.PostalCode = dog.PostalCode;
+            currentDog.Number = dog.Number;
+
+
+            _context.Update(currentDog);
+            _context.SaveChanges();
+        }
+        public void UpdateCat(int shelterId, int animalId, Cat cat)
+        {
+            var currentCat = _context.Cats.FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
+            currentCat.Declawed = cat.Declawed;
+
+            currentCat.Name = cat.Name;
+            currentCat.DateOfBirth = cat.DateOfBirth;
+            currentCat.IsChecked = cat.IsChecked;
+            currentCat.KidFriendly = cat.KidFriendly;
+            currentCat.Since = cat.Since;
+            currentCat.Race = cat.Race;
+            currentCat.ShelterId = cat.ShelterId;
+            currentCat.Street = cat.Street;
+            currentCat.PostalCode = cat.PostalCode;
+            currentCat.Number = cat.Number;
+
+            _context.Update(currentCat);
+            _context.SaveChanges();
+        }
+        public void UpdateOther(int shelterId, int animalId, Other other)
+        {
+            var currentOther = _context.Others.FirstOrDefault(x => x.ShelterId == shelterId && x.Id == animalId);
+            currentOther.Description = other.Description;
+            currentOther.Kind = other.Kind;
+
+            currentOther.Name = other.Name;
+            currentOther.DateOfBirth = other.DateOfBirth;
+            currentOther.IsChecked = other.IsChecked;
+            currentOther.KidFriendly = other.KidFriendly;
+            currentOther.Since = other.Since;
+            currentOther.Race = other.Race;
+            currentOther.ShelterId = other.ShelterId;
+            currentOther.Street = other.Street;
+            currentOther.PostalCode = other.PostalCode;
+            currentOther.Number = other.Number;
+
+            _context.Update(currentOther);
             _context.SaveChanges();
         }
     }
